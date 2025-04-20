@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ваше Имя - Портфолио</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/pric.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+
+    <div id="scroll-progress-bar"></div>
+
+    <div id="loading-indicator">
+        <div class="spinner"></div>
+    </div>
+
+    <div id="help-trigger">
+        <span>?</span>
+    </div>
+
+    <div id="help-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>Помощь</h2>
+            <p>Привет! Здесь вы можете найти ответы на часто задаваемые вопросы.</p>
+            <p>Например: Что это за сайт? - Это мое портфолио веб-разработчика.</p>
+            <p>Как со мной связаться? - Смотрите раздел "Контакты".</p>
+            <p>Удачи!</p>
+        </div>
+    </div>
+
+    <div id="section-indicators">
+        <a href="#about" class="indicator active" data-section="about"></a>
+        <a href="#portfolio" class="indicator" data-section="portfolio"></a>
+        <a href="#skills" class="indicator" data-section="skills"></a>
+        <a href="#contact" class="indicator" data-section="contact"></a>
+    </div>
+
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <h1>Роман</h1>
+                <p class="lead">Креативный Веб-разработчик | Full-Stack Developer</p>
+                <nav>
+                    <ul>
+                        <li><a href="#about">Обо мне</a></li>
+                        <li><a href="#portfolio">Портфолио</a></li>
+                        <li><a href="#skills">Навыки</a></li>
+                        <li><a href="#contact">Контакты</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <section id="about" class="section">
+        <div class="container">
+            <div class="about-grid" data-aos="fade-up" data-aos-duration="1000">  <!-- Анимация появления сверху -->
+                <div class="about-image">
+                    <img src="./img/image.png" alt="Ваша фотография" data-aos="zoom-in" data-aos-delay="200" data-aos-duration="800">  <!-- Zoom при появлении, задержка -->
+                </div>
+                <div class="about-text">
+                    <h2 data-aos="fade-right" data-aos-duration="800">Привет!</h2>  <!-- Появление справа -->
+                    <p data-aos="fade-left" data-aos-duration="800">
+                        Я увлеченный веб-разработчик с опытом работы в front-end и back-end технологиях.  Люблю создавать сложные, масштабируемые и удобные для пользователя веб-приложения.  Постоянно учусь новому и стремлюсь к совершенству.
+                    </p>
+                    <p data-aos="fade-left" data-aos-duration="800" data-aos-delay="200">
+                        Я работаю с современными фреймворками, такими как React, Vue.js и Node.js, и  умею создавать качественный и чистый код.  Мой опыт также включает разработку REST API, работу с базами данных и развертывание веб-приложений.
+                    </p>
+                    <a href="your-resume.pdf" class="button download-link" target="_blank">
+                        <span class="download-text">Скачать резюме</span>
+                        <span class="download-progress"></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="portfolio" class="section">
+        <div class="container">
+            <h2>Мои работы</h2>
+            <div class="portfolio-grid" data-aos="fade-up" data-aos-duration="1200">
+                <div class="portfolio-item" data-aos="fade-right" data-aos-duration="1200">
+                    <img src="" alt="">
+                    <div class="portfolio-details">
+                        <h3>Тату салон</h3>
+                        <p>Создан для проекта.</p>
+                        <div class="portfolio-links">
+                            <a href="https://romasic212.github.io/-.../" target="_blank"><i class="fas fa-link"></i> Демо</a>
+                            <a href="https://github.com/Romasic212/-..." target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                 <div class="portfolio-item" data-aos="fade-left" data-aos-duration="1200">
+                    <img src="" alt="">
+                    <div class="portfolio-details">
+                        <h3>Интернет магазин</h3>
+                        <p>Это интернет магазин создан для практики backenda.</p>
+                        <div class="portfolio-links">
+                            <a href="https://romasic212.github.io/-../" target="_blank"><i class="fas fa-link"></i> Демо</a>
+                            <a href="https://github.com/Romasic212/-.." target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item"data-aos="fade-up" data-aos-duration="1200">
+                    <img src="" alt="">
+                    <div class="portfolio-details">
+                        <h3>Конспекты</h3>
+                        <p>Этот сайт был создан как учебынй проект, для удобства получения информации моим одногуппникам.</p>
+                        <div class="portfolio-links">
+                            <a href="https://romasic212.github.io/.-/" target="_blank"><i class="fas fa-link"></i> Демо</a>
+                            <a href="https://github.com/Romasic212/.-" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="section">
+        <div class="container">
+            <h2 data-aos="fade-up" data-aos-duration="800">Технологии и инструменты</h2>
+            <div class="skills-grid">
+                <div class="skill" data-aos="fade-up" data-aos-duration="600">
+                    <i class="fab fa-html5"></i>
+                    <p>HTML5</p>
+                </div>
+                <div class="skill" data-aos="fade-up" data-aos-duration="600" data-aos-delay="100">
+                    <i class="fab fa-css3-alt"></i>
+                    <p>CSS3</p>
+                </div>
+                <div class="skill" data-aos="fade-up" data-aos-duration="600" data-aos-delay="200">
+                    <i class="fab fa-js"></i>
+                    <p>JavaScript</p>
+                </div>
+                <div class="skill" data-aos="fade-up" data-aos-duration="600" data-aos-delay="300">
+                    <i class="fab fa-react"></i>
+                    <p>React</p>
+                </div>
+                <div class="skill" data-aos="fade-up" data-aos-duration="600" data-aos-delay="400">
+                    <i class="fab fa-node-js"></i>
+                    <p>Node.js</p>
+                </div>
+                <div class="skill" data-aos="fade-up" data-aos-duration="600" data-aos-delay="500">
+                    <i class="fas fa-code"></i>
+                    <p>Git</p>
+                </div>
+                <div class="skill" data-aos="fade-up" data-aos-duration="600" data-aos-delay="600">
+                    <i class="fab fa-figma"></i>
+                    <p>Figma</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section">
+        <div class="container">
+            <h2 class="contact-title">Связаться со мной</h2>
+            <p class="contact-lead">Буду рад сотрудничеству!</p>
+            <div class="contact-details">
+                <p><i class="fas fa-envelope"></i> <a href="mailto:your.email@example.com">your.email@example.com</a></p>
+                <p><i class="fas fa-phone"></i> +7 (XXX) XXX-XX-XX</p>
+                <div class="social-links">
+                    <a href="https://vk.com/your_vk_profile" target="_blank"><i class="fab fa-vk"></i></a>
+                    <a href="https://web.telegram.org/k/#@Romasicr" target="_blank"><i class="fab fa-telegram"></i></a>
+                    <a href="https://github.com/Romasic212" target="_blank"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy;  Ваше Имя, 2024.  Сделано с любовью и кодом. 
+            <span class="console-hint">(Подсказка: откройте консоль)</span></p>
+        </div>
+    </footer>
+    
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+
+
+
+  <script src="./pricol.js"></script>
+
+
+    <script>
+        // JavaScript для создания звёзд
+        const numStars = 700; // Количество звёзд
+        const body = document.body;
+  
+        for (let i = 0; i < numStars; i++) {
+          const star = document.createElement('div');
+          star.classList.add('star');
+          star.style.left = `${Math.random() * 100}vw`;
+          star.style.top = `${Math.random() * 250}vh`;
+          star.style.animationDelay = `${Math.random() * 2}s`; // Разная задержка для мерцания
+          body.appendChild(star);
+        }
+      </script>
+
+      <script>
+        window.addEventListener('load', function() {
+    const loadingIndicator = document.getElementById('loading-indicator');
+    loadingIndicator.classList.add('hidden');
+    // Задержка перед полным скрытием (чтобы анимация успела завершиться)
+    setTimeout(() => {
+        loadingIndicator.style.display = 'none';
+    }, 500);
+});
+      </script>
+
+
+      <script>
+        const sections = document.querySelectorAll('.section');
+const indicators = document.querySelectorAll('.indicator');
+
+function updateSectionIndicators() {
+    let currentSection = '';
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        if (window.pageYOffset >= sectionTop - window.innerHeight / 2) { // Центр экрана
+            currentSection = section.id;
+        }
+    });
+
+    indicators.forEach(indicator => {
+        indicator.classList.remove('active');
+        if (indicator.dataset.section === currentSection) {
+            indicator.classList.add('active');
+        }
+    });
+}
+
+window.addEventListener('scroll', updateSectionIndicators);
+updateSectionIndicators(); // Вызываем функцию при загрузке страницы
+      </script>
+
+
+
+
+</body>
+</html>

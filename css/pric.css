@@ -1,0 +1,261 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#loading-indicator {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--background-color);
+    z-index: 10000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.5s ease;
+}
+
+#loading-indicator.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.spinner {
+    border: 4px solid rgba(255, 255, 255, 0.3);
+    border-top: 4px solid var(--primary-color);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+#scroll-progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 4px;
+    background-color: var(--primary-color);
+    z-index: 1001;
+}
+
+#section-indicators {
+    position: fixed;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.indicator {
+    display: block;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.3);
+    margin: 8px 0;
+    transition: background-color 0.3s ease;
+}
+
+.indicator.active {
+    background-color: var(--primary-color);
+}
+
+.download-link {
+    position: relative; /* Для позиционирования download-progress */
+    overflow: hidden; /* Скрываем download-progress, пока он не заполнен */
+}
+
+.download-text {
+    position: relative;  /*  Обеспечиваем нахождение текста поверх download-progress */
+    z-index: 1;
+}
+
+.download-progress {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.2);  /* Прозрачный акцентный цвет */
+    /* transition: width 0.3s ease; */ /*  Не используем transition, т.к. не соответствует идее "загрузки" */
+    z-index: 0;
+    transform: translateX(-100%); /* Скрываем в начале */
+}
+
+.download-link:hover .download-progress {
+    transform: translateX(0); /* Показываем при наведении (загрузка) */
+    transition: transform 0.9s ease; /* Время "загрузки" */
+}
+
+#help-trigger {
+    position: fixed;
+    top: 50%;
+    right: -30px; /* Скрываем большую часть элемента за границей */
+    transform: translateY(-220%); /* Центрируем по вертикали */
+    background-color: var(--primary-color);
+    color: var(--background-color);
+    font-size: 2em;
+    font-weight: bold;
+    padding: 15px 30px;  /* Увеличиваем размер */
+    border-radius: 30px 0 0 30px; /* Скругляем только левую сторону */
+    cursor: pointer;
+    z-index: 1000;
+    transition: right 0.3s ease; /* Плавное появление */
+    box-shadow: -3px 3px 5px rgba(0, 0, 0, 0.2);
+}
+
+#help-trigger:hover {
+    right: 0; /* Показываем при наведении */
+}
+
+/* Стили для модального окна (как и раньше) */
+.modal {
+    display: none; /* Скрыто по умолчанию */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Полупрозрачный фон */
+    z-index: 10001;
+    overflow: auto; /* Добавляем скролл, если контент не помещается */
+}
+
+.modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: 15% auto; /* Центрируем по вертикали и горизонтали */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Занимает 80% ширины экрана */
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    animation-name: animatetop;
+    animation-duration: 0.4s
+}
+
+/* Анимация появления */
+@keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+}
+
+/* Кнопка закрытия */
+.close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(10, 25, 47, 0.8);
+    z-index: 10001;
+    overflow: auto;
+    opacity: 0;
+    transition: opacity 0.4s ease, visibility 0s linear 0.4s;
+    visibility: hidden;
+    padding: 20px; /* Добавим отступы, чтобы модальное окно не прилипало к краям экрана на мобильных */
+    box-sizing: border-box; /* Важно! */
+}
+
+.modal.show {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.4s ease, visibility 0s linear 0s;
+}
+
+.modal-content {
+    position: relative;
+    background-color: #112240;
+    margin: 10% auto;
+    padding: 30px;
+    border-radius: 10px;
+    width: 90%; /* Увеличим на мобильных */
+    max-width: 600px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    transform: translateY(-50px);
+    transition: transform 0.4s ease;
+}
+
+.modal.show .modal-content {
+    transform: translateY(0);
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .modal-content {
+        width: 95%; /* Еще больше на маленьких экранах */
+        margin: 20% auto; /* Увеличим отступ сверху, чтобы было больше места */
+        padding: 20px;
+    }
+}
+
+/* Кнопка закрытия */
+.close-button {
+    color: var(--secondary-color);
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: #fff;
+    text-decoration: none;
+}
+
+.modal-content h2 {
+    color: var(--heading-color);
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.modal-content p {
+    color: var(--text-color);
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.modal.closing {
+    opacity: 0;
+    transition: opacity 0.4s ease, visibility 0s linear 0.4s;
+    visibility: hidden;
+}
+
+.modal.closing .modal-content {
+    transform: translateY(-50px); /* Возвращаем обратно */
+    transition: transform 0.4s ease;
+}
+
